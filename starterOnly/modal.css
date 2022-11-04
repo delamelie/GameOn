@@ -37,6 +37,12 @@ img {
 .header-logo {
     float: left;
 }
+@media screen and (max-width: 540px) {
+  img{
+    width: 80%;
+  }
+}
+
 .main-navbar {
     float: right;
 }
@@ -45,7 +51,7 @@ img {
   display: block;
   color: #000000;
   text-align: center;
-  padding: 12px 12px;
+  padding: 13px 13px;
   margin: 5px;
   text-decoration: none;
   font-size: 20px;
@@ -81,7 +87,10 @@ img {
 }
 
 @media screen and (max-width: 992px) {
-  .topnav a {display: none;}
+  .topnav a {
+    display: none;
+    font-size: 20px;
+    }
   .topnav a.icon {
     float: right;
     display: block;
@@ -103,13 +112,13 @@ img {
 }
 
  @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
+  .topnav a {
+    display: none;
+    font-size: 15px;
+    padding: 5px 5px;
+    margin: 0;
   }
-} 
+}
 
 main {
   font-size: 130%;
@@ -121,6 +130,11 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
+}
+@media screen and (max-width: 390px) {
+  main {
+    margin: 1px 10px 10px;
+  }
 }
 
 .modal-btn {
@@ -191,6 +205,12 @@ main {
   padding-top: 10px;
 }
 
+@media screen and (max-width: 570px) {
+  .content {
+    margin: 60px auto;
+  }
+}
+
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
@@ -202,6 +222,11 @@ label {
   font-weight: normal;
   display: inline-block;
   margin-bottom: 11px;
+}
+@media screen and (max-width: 485px) {
+  label {
+    font-size: 14px;
+  }
 }
 input {
   padding: 8px;
@@ -215,6 +240,11 @@ input {
   border-radius: 8px;
   font-size: 20px;
   height: 48px;
+}
+@media screen and (max-width: 485px) {
+  .text-control {
+    font-size: 15px;
+  }
 }
 /*.formData[data-error]::after #error1, #error2, #error3, #error4, #error5, #error6, #error7{
   content: attr(data-error);
@@ -245,7 +275,6 @@ input[data-error]::after {
   margin-top: 10px;
   margin-bottom: 12px;
   text-align: left;
-  line-height: 0.3;
   transition: 0.3s;
 }
 .border-invalid {
@@ -505,7 +534,7 @@ footer {
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px;
+    padding: 0;
   }
   .hero-content::after {
     content: unset;
@@ -533,6 +562,37 @@ footer {
   .copyrights {
     margin-top: 50px;
     text-align: center;
+  }
+}
+@media screen and (max-width: 710px) {
+  .hero-headline {
+    font-size: 3rem;
+  }
+  .hero-text {
+    font-size: 1.2rem;
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .hero-section {
+    min-height: 0;
+  }
+  .hero-content {
+    min-width: 0;
+  }
+  .hero-headline {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 390px) {
+  .hero-headline {
+    font-size: 1.8rem;
+  }
+  .hero-text {
+    margin-top: 20px;
+  }
+  .hero-img img {
+    margin-top: 20px;
   }
 }
 
