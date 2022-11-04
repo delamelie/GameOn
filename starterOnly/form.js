@@ -1,35 +1,40 @@
-// DOM Elements
+// Access to DOM Elements
 
-const firstName = document.getElementById("first");
-const lastName = document.getElementById("last");
-const emailAddress = document.getElementById("email");
+let firstName = document.getElementById("first");
+let lastName = document.getElementById("last");
+let emailAddress = document.getElementById("email");
 const dateOfBirth = document.getElementById("birthdate");
 const numberOfGamesPlayed = document.getElementById("quantity");
-const locationChoice = document.getElementsByClassName("location-checkbox");
-const conditionsOfAcceptance = document.getElementById("checkbox1");
+const locationCheck = document.getElementsByClassName("location-checkbox");
+const conditionsCheck = document.getElementById("checkbox1");
 const error1 = document.getElementById("error1");
 const error2 = document.getElementById("error2");
 const error3 = document.getElementById("error3");
 const error4 = document.getElementById("error4");
 const error5 = document.getElementById("error5");
-const regexName = /^([a-zA-Z- ]+)$/;
+
+
+// Regex
+
+const regexName = /^([a-zA-Z-' ]+)$/;
 const regexEmail = /^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
 
 
-// Event listening
+// Error messages
 
-firstName.addEventListener("change", firstNameValidate);
-lastName.addEventListener("change", lastNameValidate);
-emailAddress.addEventListener("change", emailAddressValidate);
-dateOfBirth.addEventListener("change", dateOfBirthValidate);
-numberOfGamesPlayed.addEventListener("click", numberOfGamesPlayedValidate);
-conditionsOfAcceptance.addEventListener("change", conditionsOfAcceptanceValidate);
+const message1 = "Votre prénom doit comporter au moins 2 caractères";
+const message2 = "Votre nom de famille doit comporter au moins 2 caractères";
+const message3 = "Vous devez saisir une adresse e-mail valide";
+const message4 = "Vous devez indiquer votre date de naissance";
+const message5 = "Vous devez indiquer le nombre de tournois auxquels vous avez participé";
+const message7 = "Vous devez accepter les conditions d'utilisation";
 
 
-/*// Generic function to validate all fields
+// Generic function to validate each field
 
-function fieldValidate(name, error, message) {    
-    if(name.value.length<2 || regexName.test(name.value)== false){
+function fieldValidate(condition, name, error, message) { 
+    console.log (condition)   
+    if(condition){
         error.style.display = "block";
         name.classList.add ("border-invalid");
         error.textContent = message;
@@ -39,183 +44,86 @@ function fieldValidate(name, error, message) {
         name.classList.remove ("border-invalid");
     }
     return true;
-}*/
-
-
-// First name
-
-function firstNameValidate() {    
-    if(firstName.value.length<2 || regexName.test(firstName.value)== false){
-        error1.style.display = "block";
-        firstName.classList.add ("border-invalid");
-        error1.textContent = "Votre prénom doit comporter au moins 2 caractères";
-    }else{
-        error1.style.display = "none";
-        error1.textContent = "";
-        firstName.classList.remove ("border-invalid");
-    }
-    return true;
 }
 
+       
+// Functions : first name, last name, email address, date of birth, games played, conditions
 
-// Last name
+firstName.addEventListener('change', function() {
+    fieldValidate(firstName.value.length<2 || regexName.test(firstName.value)== false, firstName, error1, message1);
+});
 
-function lastNameValidate() {    
-    if(lastName.value.length<2 || regexName.test(lastName.value)== false){
-        error2.style.display = "block";
-        lastName.classList.add ("border-invalid");
-        error2.textContent = "Votre nom de famille doit comporter au moins 2 caractères";
-    }else{
-        error2.style.display = "none";
-        error2.textContent = "";
-        lastName.classList.remove ("border-invalid");
+lastName.addEventListener('change', function() {
+    fieldValidate(lastName.value.length<2 || regexName.test(lastName.value)== false, lastName, error2, message2);
+});
+
+emailAddress.addEventListener('change', function() {
+    fieldValidate(emailAddress.value=="" || regexEmail.test(emailAddress.value)== false, emailAddress, error3, message3);
+});
+
+dateOfBirth.addEventListener('change', function() {
+    fieldValidate(dateOfBirth.value=="", dateOfBirth, error4, message4);
+});
+
+numberOfGamesPlayed.addEventListener('click', function() {
+    fieldValidate(numberOfGamesPlayed.value=="", numberOfGamesPlayed, error5, message5);
+});
+
+conditionsCheck.addEventListener('change', function() {
+    fieldValidate(conditionsCheck.checked == false, conditionsCheck, error7, message7);
+});
+
+
+// Function : choose location
+
+function locationValidate() {
+    let checked = false;
+    for (let i = 0; i < locationCheck.length; i++) {
+        if(locationCheck[i].checked == "true") {
+            checked = true;
+        }
     }
-    return true;
-}
-
-
-// Email address
-
-function emailAddressValidate() {    
-    if(emailAddress.value=="" || regexEmail.test(emailAddress.value)== false){
-        error3.style.display = "block";
-        emailAddress.classList.add ("border-invalid");
-        error3.textContent = "Vous devez saisir une adresse e-mail valide";
-    }else{
-        error3.style.display = "none";
-        error3.textContent = "";
-        emailAddress.classList.remove ("border-invalid");
-    }
-    return true;
-}
-
-
-// Birthdate
-
-function dateOfBirthValidate() {    
-    if(dateOfBirth.value==""){
-        error4.style.display = "block";
-        dateOfBirth.classList.add ("border-invalid");
-        error4.textContent = "Vous devez indiquer votre date de naissance";
-    }else{
-        error4.style.display = "none";
-        error4.textContent = "";
-        dateOfBirth.classList.remove ("border-invalid");
-    }
-    return true;
-}
-
-
-// Games played
-
-function numberOfGamesPlayedValidate() {    
-    if(numberOfGamesPlayed.value==""){
-        error5.style.display = "block";
-        numberOfGamesPlayed.classList.add ("border-invalid");
-        error5.textContent = "Vous devez indiquer le nombre de tournois auquel vous avez participé";
-    }else{
-        error5.style.display = "none";
-        error5.textContent = "";
-        numberOfGamesPlayed.classList.remove ("border-invalid");
-    }
-    return true;
-}
-
-
-// Choose location
-
-function locationValidate() {    
-    if(document.getElementById("location1").checked == false){
-        error6.style.display = "block";
-        document.getElementById("location1").classList.add ("border-invalid");
-        error6.textContent = "Vous devez choisir une ville";
-    }else{
+    if (checked){
         error6.style.display = "none";
         error6.textContent = "";
-        location.classList.remove ("border-invalid");
     }
-    return true;
-}
-
-    
-
-
-// Accept conditions
-
-function conditionsOfAcceptanceValidate() {    
-    if(conditionsOfAcceptance.checked == false){
-        error7.style.display = "block";
-        error7.textContent = "Vous devez accepter les conditions d'utilisation";
-        return false;
-    }else{
-        error7.style.display = "none";
-        error7.textContent = "";
-        conditionsOfAcceptance.classList.remove ("border-invalid");
+    else{
+        error6.style.display = "block";
+        error6.textContent = "Vous devez choisir une ville";
     }
-    return true;
 }
 
 
 // Submit form
 
 const formulaire = document.getElementById("formulaire");
+/*const registrationScreen = document.getElementsByClassName("bground");
+const thankyouScreen = document.getElementsByClassName("bground-2");*/
+
+function registrationConfirm() {
+    formulaire.style.display = "none";
+    thankyouScreen.style.display = "block";
+  }
 
 function validate(event) { 
-    event.preventDefault();   
-    if (firstNameValidate() &&
-    lastNameValidate() &&
-    emailAddressValidate () &&
-    dateOfBirthValidate () &&
-    numberOfGamesPlayed () &&
-    conditionsOfAcceptance () ){
-    return true;
+    locationValidate ();
+    event.preventDefault();
+    if (fieldValidate(firstName.value.length<2 || regexName.test(firstName.value)== false, firstName, error1, message1) &&
+        fieldValidate(lastName.value.length<2 || regexName.test(lastName.value)== false, lastName, error2, message2) &&
+        fieldValidate(emailAddress.value=="" || regexEmail.test(emailAddress.value)== false, emailAddress, error3, message3) &&
+        fieldValidate(dateOfBirth.value=="", dateOfBirth, error4, message4) &&
+        fieldValidate(numberOfGamesPlayed.value=="", numberOfGamesPlayed, error5, message5) &&
+        locationValidate(conditionsCheck.checked == false, conditionsCheck, error7, message7)){
+            registrationConfirm ();
     }
 }
 
 
-
-    /*if (radioCheck()===false){
-        error.innerHTML = "Vous devez choisir une ville";
-        return false;
-    }
-   
+  
 
 
 
-/*
-firstName
 
-    
-function validatebis(fn, ln) {
-    if (fn.value == ""){
-        alert("Vous devez saisir votre prénom");
-        return false;
-    }
-    if (ln.value == ""){
-        alert("Vous devez saisir votre nom");
-        return false;
-    }
-    return true;
-}
-
-
-// appel fonction
-
-resultatsaisie = validatebis(firstName, lastName)
-console.log(resultatsaisie)
-
-/*
-document.getElementsByTagName("form").addEventListener("onsubmit", function (e){
-
-if (error){
-    e.preventDefault();
-    document.error.innerHTML = erreur;
-    return false;
-    }else{
-    alert("Votre inscription a bien été reçue");
-    }
-}
-*/
 
 
 
