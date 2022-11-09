@@ -280,15 +280,13 @@ input[data-error]::after {
 .border-invalid {
   border: 2px solid #e54858;
 }
-.checkbox-label,
-.checkbox2-label {
+.checkbox-label, .checkbox2-label {
   position: relative;
   margin-left: 36px;
   font-size: 12px;
   font-weight: normal;
 }
-.checkbox-label .checkbox-icon,
-.checkbox2-label .checkbox-icon {
+.checkbox-label .checkbox-icon, .checkbox2-label .checkbox-icon {
   display: block;
   width: 20px;
   height: 20px;
@@ -301,8 +299,7 @@ input[data-error]::after {
   top: -1px;
   transition: 0.3s;
 }
-.checkbox-label .checkbox-icon::after,
-.checkbox2-label .checkbox-icon::after {
+.checkbox-label .checkbox-icon::after, .checkbox2-label .checkbox-icon::after {
   content: "";
   width: 13px;
   height: 13px;
@@ -320,8 +317,7 @@ input[data-error]::after {
 .checkbox-input {
   display: none;
 }
-.checkbox-input:checked + .checkbox-label .checkbox-icon::after,
-.checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
+.checkbox-input:checked + .checkbox-label .checkbox-icon::after, .checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
   opacity: 1;
 }
 .checkbox-input:checked + .checkbox2-label .checkbox-icon {
@@ -344,7 +340,7 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
-.close {
+.close, .close-2 {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -354,8 +350,7 @@ input[data-error]::after {
   cursor: pointer;
   transform: scale(0.7);
 }
-.close:before,
-.close:after {
+.close:before,.close:after,.close-2:before,.close-2:after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -363,14 +358,13 @@ input[data-error]::after {
   width: 3px;
   background-color: #fff;
 }
-.close:before {
+.close:before, .close-2:before {
   transform: rotate(45deg);
 }
-.close:after {
+.close:after, .close-2:after  {
   transform: rotate(-45deg);
 }
-.btn-submit,
-.btn-signup {
+.btn-submit,.btn-signup {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -417,8 +411,7 @@ input[data-error]::after {
   top: 13px;
 }
 
-.select-items div,
-.select-selected {
+.select-items div, .select-selected {
   color: #000;
   padding: 11px 16px;
   border: 1px solid transparent;
@@ -443,8 +436,7 @@ input[data-error]::after {
   display: none;
 }
 
-.select-items div:hover,
-.same-as-selected {
+.select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
 /* custom select end */
@@ -609,6 +601,7 @@ footer {
 
 
 /*Confirmation*/
+
 .bground-2{
   display: none;
   position: fixed;
@@ -629,7 +622,7 @@ footer {
   animation-duration: var(--modal-duration);*/
   background: #232323;
   border-radius: 10px;
-  /*overflow: hidden;*/
+  overflow: hidden;
   position: relative;
   color: #fff;
   padding-top: 10px;
@@ -640,7 +633,7 @@ footer {
   margin: 15px auto;
 }
 
-.confirmation-btn{
+.btn-valid{
   background: #fe142f;
   margin-top: 0.5em;
   padding: 1em;
