@@ -12,22 +12,26 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn = document.querySelector(".close");
+const closeConfirmationBtn = document.querySelector(".btn-end");
 
-// launch modal event
+
+// Launch modal form
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// launch modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
 
-// Stop modal event
+// Close modal form and confirmation window with X cross or button
 closeBtn.addEventListener("click", closeModal);
+closeConfirmationBtn.addEventListener("click", closeModal);
 
-// Close modal form
 function closeModal() {
   modalbg.style.display = "none";
+  confirmation.style.display = "none";
+  registrationForm.style.display = "block";
 }
+
 
 
 
