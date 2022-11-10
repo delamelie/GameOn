@@ -94,6 +94,8 @@ function locationValidate() {
     }
 }
 
+locationCheck.forEach((location) => location.addEventListener('change', locationValidate));
+
 
 // Submit form
 
@@ -135,6 +137,16 @@ function validate(event) {
         formValid = true;   
     }
 }
+
+/*submitBtn.addEventListener('onsubmit', validate);*/
+
+
+
+
+/*conditionsCheck.addEventListener('click', function() {
+    fieldValidate(conditionsCheck.checked == true, conditionsCheck, error7, message7);
+});*/
+
 
 
 /*conditionsCheck.addEventListener('click', function() {

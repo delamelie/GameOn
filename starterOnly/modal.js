@@ -9,6 +9,7 @@ function editNav() {
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
+const confirmationbg = document.querySelector(".bground2");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn = document.querySelector(".close");
@@ -31,6 +32,10 @@ function closeModal() {
   confirmation.style.display = "none";
   registrationForm.style.display = "block";
 }
+
+
+
+
 
 
 
