@@ -138,20 +138,12 @@ function validate(event) {
     }
 }
 
-/*submitBtn.addEventListener('onsubmit', validate);*/
-
-
-
-
 /*conditionsCheck.addEventListener('click', function() {
     fieldValidate(conditionsCheck.checked == true, conditionsCheck, error7, message7);
 });*/
 
 
 
-/*conditionsCheck.addEventListener('click', function() {
-    fieldValidate(conditionsCheck.checked == true, conditionsCheck, error7, message7);
-});*/
 
 
 
