@@ -347,7 +347,7 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
-.close, .close-2 {
+.close {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -365,13 +365,13 @@ input[data-error]::after {
   width: 3px;
   background-color: #fff;
 }
-.close:before, .close-2:before {
+.close:before{
   transform: rotate(45deg);
 }
-.close:after, .close-2:after  {
+.close:after  {
   transform: rotate(-45deg);
 }
-.btn-submit,.btn-signup {
+.btn-submit,.btn-signup, .btn-end {
   background: #fe142f;
   display: block;
   margin: 0 auto;

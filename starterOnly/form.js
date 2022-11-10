@@ -94,8 +94,6 @@ function locationValidate() {
     }
 }
 
-locationCheck.forEach((location) => location.addEventListener('change', locationValidate));
-
 
 // Submit form
 
