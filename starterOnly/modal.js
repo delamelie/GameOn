@@ -29,9 +29,21 @@ closeConfirmationBtn.addEventListener("click", closeModal);
 
 function closeModal() {
   modalbg.style.display = "none";
-  confirmation.style.display = "none";
-  registrationForm.style.display = "block";
 }
+
+//Stop modal event
+closeConfirmationBtn.addEventListener("click", closeConfirmation);
+
+// Close confimation message with the X close button
+function closeConfirmation() {
+  confirmationbg.style.display = "none";
+}
+
+
+
+
+
+
 
 
 

@@ -287,15 +287,13 @@ input[data-error]::after {
 .border-invalid {
   border: 2px solid #e54858;
 }
-.checkbox-label,
-.checkbox2-label {
+.checkbox-label, .checkbox2-label {
   position: relative;
   margin-left: 36px;
   font-size: 12px;
   font-weight: normal;
 }
-.checkbox-label .checkbox-icon,
-.checkbox2-label .checkbox-icon {
+.checkbox-label .checkbox-icon, .checkbox2-label .checkbox-icon {
   display: block;
   width: 20px;
   height: 20px;
@@ -373,8 +371,7 @@ input[data-error]::after {
 .close:after, .close-2:after  {
   transform: rotate(-45deg);
 }
-.btn-submit,
-.btn-signup {
+.btn-submit,.btn-signup {
   background: #fe142f;
   display: block;
   margin: 0 auto;
