@@ -393,12 +393,11 @@ input[data-error]::after {
   display: none;
   text-align: center;
   font-size: 36px;
-  height: 650px;
-  border: 5px solid blue;
+  margin-top: 250px;
 }
 
 .btn-end{
-  margin-top: 500px;
+  margin-top: 250px;
 }
 
 /* custom select styles */
@@ -610,6 +609,9 @@ input[data-error]::after {
     padding: 5px 5px;
     margin: 0;
   }
+  .greeting-message{
+    font-size: 30px;
+  }
 }
 
 @media screen and (max-width: 485px) {
@@ -633,6 +635,9 @@ input[data-error]::after {
   }
   .hero-img img {
     margin-top: 20px;
+  }
+  .btn-submit, .btn-end {
+    padding: 12px 50px;
   }
 }
 
