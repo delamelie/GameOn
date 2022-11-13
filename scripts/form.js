@@ -95,27 +95,13 @@ function locationValidate() {
 }
 
 
-// Submit form
+//Check that all the inputs are correct before submitting form
 
 const submitBtn = document.querySelector(".btn-submit");
 const registrationForm = document.querySelector("form");
 const confirmation = document.querySelector(".greeting-message");
 
 submitBtn.addEventListener('click', validate);
-
-function registrationConfirm() {
-    registrationForm.style.display = "none";
-    confirmation.style.display = "block";
-    firstName.value="";
-    lastName.value="";
-    emailAddress.value="";
-    dateOfBirth.value="";
-    numberOfGamesPlayed.value="";
-    conditionsCheck.checked = false;
-        for (let i = 0; i < locationCheck.length; i++) {
-            locationCheck[i].checked=false
-        }
-  }
 
 function validate(event) { 
     event.preventDefault();
@@ -136,11 +122,21 @@ function validate(event) {
     }
 }
 
-/*conditionsCheck.addEventListener('click', function() {
-    fieldValidate(conditionsCheck.checked == true, conditionsCheck, error7, message7);
-});*/
 
-
+//Display greeting screen and reset by clearing entered values after submission
+function registrationConfirm() {
+    registrationForm.style.display = "none";
+    confirmation.style.display = "block";
+    firstName.value="";
+    lastName.value="";
+    emailAddress.value="";
+    dateOfBirth.value="";
+    numberOfGamesPlayed.value="";
+    conditionsCheck.checked = false;
+        for (let i = 0; i < locationCheck.length; i++) {
+            locationCheck[i].checked=false
+        }
+  }
 
 
 

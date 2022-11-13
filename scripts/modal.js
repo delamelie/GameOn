@@ -23,6 +23,8 @@ function launchModal() {
 }
 
 // Close modal form and confirmation window with X cross or button
+// Display empty fields to enable another user to register
+
 closeBtn.addEventListener("click", closeModal);
 closeConfirmationBtn.addEventListener("click", closeModal);
 
