@@ -29,7 +29,7 @@
           <h1 class="hero-headline">
             Marathon national<br>
             de jeux vidéos</h1>
-          <p class="hero-text">Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !</p>
+          <p class="hero-text">Vous aimez jouer ? Notre prochain événement gaming est ouvert aux réservations... Places limitées !</p>
           <button class="btn-signup modal-btn">Je m'inscris</button>
         </div>
 
@@ -46,38 +46,38 @@
               <div class="formData">
                 <label for="first">Prénom</label><br>
                 <input class="text-control" type="text" id="first" name="first"><br>
-                <span id="error-first"></span>
+                <span id="error-first"></span> <!---Ajout d'une span error-->
               </div>
 
               <div class="formData">
                 <label for="last">Nom</label><br>
                 <input class="text-control" type="text" id="last" name="last"><br>
-                <span id="error-last"></span>
+                <span id="error-last"></span> <!---Ajout d'une span error-->
               </div>
 
               <div class="formData">
                 <label for="email">E-mail</label><br>
                 <input class="text-control" type="email" id="email" name="email"><br>
-                <span id="error-email"></span>
+                <span id="error-email"></span> <!---Ajout d'une span error-->
               </div>
 
               <div class="formData">
                 <label for="birthdate">Date de naissance</label><br>
                 <input class="text-control" type="date" id="birthdate" name="birthdate"><br>
-                <span id="error-birth"></span>
+                <span id="error-birth"></span> <!---Ajout d'une span error-->
               </div>
 
               <div class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity">
-                <span id="error-quantity"></span>
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <span id="error-quantity"></span> <!---Ajout d'une span error-->
               </div>
 
               <div class="formData">
                 <label for="city">A quel tournoi souhaitez-vous participer cette année ?</label><br>
                 <input class="checkbox-input location-checkbox" type="radio" id="location1" name="location" value="New York">
                 <label class="checkbox-label" for="location1">
-                  <span class="checkbox-icon"></span>
+                  <span class="checkbox-icon"></span> 
                   New York</label>
 
                 <input class="checkbox-input location-checkbox" type="radio" id="location2" name="location" value="San Francisco">
@@ -104,7 +104,7 @@
                 <label class="checkbox-label" for="location6">
                   <span class="checkbox-icon"></span>
                   Portland</label>
-                  <span id="error-location"></span>
+                  <span id="error-location"></span> <!---Ajout d'une span error-->
               </div>
 
               <div class="formData">
@@ -113,7 +113,7 @@
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
-                <span id="error-conditions"></span>
+                <span id="error-conditions"></span> <!---Ajout d'une span error-->
                 <br>
 
                 <input class="checkbox-input" type="checkbox" id="checkbox2" checked>
@@ -127,7 +127,7 @@
               <input class="btn-submit button" type="submit" value="C'est parti">
             </form>
 
-            <div class="greeting-message">
+            <div class="greeting-message"> <!---Ajout d'une div pour la confirmation d'inscription-->
               <p class="message">Merci pour votre inscription</p>
               <input class="button btn-end" type="button"  value="Fermer">
             </div>

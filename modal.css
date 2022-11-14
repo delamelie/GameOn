@@ -265,7 +265,7 @@ input[data-error]::after {
     color: red;
 }*/
 
-#error-first, #error-last, #error-email, #error-birth, #error-quantity, #error-location, #error-conditions{
+#error-first, #error-last, #error-email, #error-birth, #error-quantity, #error-location, #error-conditions{ /*Mise en forme des erros*/
   font-size: 0.5em;
   color: #e54858;
   margin-top: 10px;
@@ -274,7 +274,7 @@ input[data-error]::after {
   transition: 0.3s;
 }
 
-.border-invalid {
+.border-invalid { /*Création d'une classe qui sevrira à afficher une bordure rouge en cas d'erreur dans un input*/
   border: 2px solid #e54858;
 }
 
