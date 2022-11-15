@@ -41,7 +41,7 @@ function fieldValidate(condition, name, error, message) {
         error.style.display = "none";
         error.textContent = "";
         name.classList.remove ("border-invalid");
-        return true;
+        //return true;
     }else{
         formValid = false;
         error.style.display = "block";
@@ -54,13 +54,13 @@ function fieldValidate(condition, name, error, message) {
 // Functions : first name, last name, email address, date of birth, games played, conditions
 
 firstName.addEventListener('input', function() {
-    fieldValidate(firstName.value.length>=2 && regexName.test(firstName.value)== true, firstName, error1, message1);});
+    fieldValidate(firstName.value.length>=2 && regexName.test(firstName.value)=== true, firstName, error1, message1);});
 
 lastName.addEventListener('input', function() {
-    fieldValidate(lastName.value.length>=2 && regexName.test(lastName.value)== true, lastName, error2, message2);});
+    fieldValidate(lastName.value.length>=2 && regexName.test(lastName.value)=== true, lastName, error2, message2);});
 
 emailAddress.addEventListener('input', function() {
-    fieldValidate(emailAddress.value!="" && regexEmail.test(emailAddress.value)== true, emailAddress, error3, message3)});
+    fieldValidate(emailAddress.value!="" && regexEmail.test(emailAddress.value)=== true, emailAddress, error3, message3)});
 
 dateOfBirth.addEventListener('input', function() {
     fieldValidate(dateOfBirth.value!="", dateOfBirth, error4, message4);});
@@ -86,7 +86,7 @@ function locationValidate() {
     if (checked){
         error6.style.display = "none";
         error6.textContent = "";
-        return true;
+        /*return true;*/
     }else{
         formValid = false;
         error6.style.display = "block";
@@ -105,9 +105,9 @@ submitBtn.addEventListener('click', validate);
 
 function validate(event) { 
     event.preventDefault();
-        fieldValidate(firstName.value.length>=2 && regexName.test(firstName.value)== true, firstName, error1, message1)
-        fieldValidate(lastName.value.length>=2 && regexName.test(lastName.value)== true, lastName, error2, message2)
-        fieldValidate(emailAddress.value!="" && regexEmail.test(emailAddress.value)== true, emailAddress, error3, message3)
+        fieldValidate(firstName.value.length>=2 && regexName.test(firstName.value)=== true, firstName, error1, message1)
+        fieldValidate(lastName.value.length>=2 && regexName.test(lastName.value)=== true, lastName, error2, message2)
+        fieldValidate(emailAddress.value!="" && regexEmail.test(emailAddress.value)=== true, emailAddress, error3, message3)
         fieldValidate(dateOfBirth.value!="", dateOfBirth, error4, message4)
         fieldValidate(numberOfGamesPlayed.value!="", numberOfGamesPlayed, error5, message5)
         locationValidate()
